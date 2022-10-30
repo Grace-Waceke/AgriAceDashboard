@@ -27,10 +27,16 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-from dashboard import views
+from django_filters import views
+
+# from dashboard import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('dashboard/', include('dashboard.urls')),
     path('index', views.index, name='index'),
+    path('api/customers/login', views.CustomerLoginView.as_view(), name="login"),
+    path('api/customers/register', views.CustomerRegisterView.as_view(), name="register"),
+    path('api/customers/getall', views.ViewAllCustomers.as_view(), name="getall"),
+
 ]

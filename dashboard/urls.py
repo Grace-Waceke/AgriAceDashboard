@@ -6,4 +6,5 @@ urlpatterns = [
     # path('data', views.pivot_data, name='pivot_data'),
     path('farmers',views.farmer_Form,name="farmers"),
     path('farmerslist',views.farmers_list,name="farmerslist"),
+
 ]
